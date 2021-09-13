@@ -1,4 +1,4 @@
-package com.digital.crud.saladereuniao.exception;
+package com.digital.crud.saladereuniao.saladereuniao.exception;
 
 import java.util.Date;
 

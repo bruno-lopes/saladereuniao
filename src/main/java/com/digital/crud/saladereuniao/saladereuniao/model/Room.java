@@ -1,4 +1,4 @@
-package com.digital.crud.saladereuniao.model;
+package com.digital.crud.saladereuniao.saladereuniao.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
