@@ -26,16 +26,21 @@ export class CreateRoomComponent implements OnInit {
   }
 
   save(){
-    this.roomService.createRoom(this.room).subscribe(data=>console.log(data),
+    this.roomService.createRoom(this.room)
+    .subscribe(
+      data=> {
+        console.log(data);
+        this.room = new Room();
+        this.gotoList();
+      },
     error => console.log(error));
-    this.room = new Room();
-    this.gotoList();
+
   }
   gotoList() {
     this.router.navigate(['/rooms'])
   }
   
-  submit() {
+  onSubmit() {
     this.submitted = true;
     this.save();
   }

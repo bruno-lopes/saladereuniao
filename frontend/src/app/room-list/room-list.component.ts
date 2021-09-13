@@ -18,7 +18,7 @@ export class RoomListComponent implements OnInit {
    }
 
 
-  rooms: Observable<any[]>;
+  rooms: Observable<Room[]>;
 
   ngOnInit(): void {
     this.reloadData();
