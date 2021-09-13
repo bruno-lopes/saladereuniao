@@ -1,29 +1,34 @@
 import { Room } from './room';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomService {
-  getRoomById(id: number): Observable<Room> {
-    throw new Error('Method not implemented.');
+
+  private baseUrl = 'http://localhost:8087/api/v1/rooms';
+
+  constructor(private http: HttpClient) { }
+
+  getRoom(id: number): Observable<any> {
+
+    return this.http.get( `${this.baseUrl}/${id}`);
   }
-  updateRoom(id: number, room: Room): Observable<Room> {
-    throw new Error('Method not implemented.');
+  updateRoom(id: number, room: Room): Observable<any> {
+    return this.http.put( `${this.baseUrl}/${id}`, room);
   }
-  getRoom(id: number): Observable<Room> {
-    throw new Error('Method not implemented.');
-  }
-  createRoom(room: Room): Observable<Room> {
-    throw new Error('Method not implemented.');
+ 
+  createRoom(room: Room): Observable<any> {
+    return this.http.post( `${this.baseUrl}`, room);
   }
   deleteRoom(id: number): Observable<any> {
-    throw new Error('Method not implemented.');
+    return this.http.delete( `${this.baseUrl}/${id}`, {responseType: 'text'});
   }
-  getRoomList(): Observable<Room[]> {
-    throw new Error('Method not implemented.');
+  getRoomList(): Observable<Object> {
+    return this.http.get( `${this.baseUrl}`);
   }
 
-  constructor() { }
+
 }

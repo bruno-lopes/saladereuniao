@@ -18,7 +18,7 @@ export class RoomDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.room = new Room();
     this.id = this.activatedRoute.snapshot.params['id'];
-    this.roomService.getRoomById(this.id).subscribe(data => {
+    this.roomService.getRoom(this.id).subscribe(data => {
       console.log(data);
       this.room = data;
     }, error => console.log(error));
