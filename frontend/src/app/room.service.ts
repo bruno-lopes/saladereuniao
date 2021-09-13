@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RoomService {
+  getRoomById(id: number): Observable<Room> {
+    throw new Error('Method not implemented.');
+  }
   updateRoom(id: number, room: Room): Observable<Room> {
     throw new Error('Method not implemented.');
   }
